@@ -23,7 +23,7 @@ variable "team_name" {
 
 resource "tfe_team" "example" {
   name         = var.team_name
-  organization = var.organization_name
+  organization = "Ting_HCP_Demo"
   visibility = "organization"
  
 #Used by Owners and users with "Manage Teams" permissions to control whether team members can manage team tokens. 
