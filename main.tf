@@ -35,8 +35,9 @@ resource "tfe_team" "example" {
   #Defaults to true. Set to false to test if we can creat team token.
   allow_member_token_management = false 
 
-   organization_access {
+  organization_access {
   #set this to true, to test what will show in the HCP Terraform UI
-     manage_teams = true
+    manage_membership = true
+    manage_teams      = true
   }
 }
