@@ -2,7 +2,9 @@ terraform {
   required_providers {
     tfe = {
       source  = "hashicorp/tfe"
-      version = ">= 0.52.0"
+      version = ">= 0.74.1
+
+Published 18 days ago"
     }
   }
 }
