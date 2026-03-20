@@ -9,6 +9,7 @@ terraform {
 
 provider "tfe" {
   hostname = "app.terraform.io"
+  token    = var.tfe_token
 }
 
 variable "organization_name" {
@@ -21,6 +22,12 @@ variable "team_name" {
   description = "Name of the team to create"
   default     = "test-team"
   type        = string
+}
+
+variable "tfe_token" {
+  description = "Terraform Cloud API token with org admin rights"
+  type        = string
+  sensitive   = true
 }
 
 resource "tfe_team" "example" {
