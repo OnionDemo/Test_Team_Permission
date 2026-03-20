@@ -24,12 +24,14 @@ variable "team_name" {
 resource "tfe_team" "example" {
   name         = var.team_name
   organization = var.organization_name
-
-  #Used by Owners and users with "Manage Teams" permissions to control whether team members can manage team tokens. 
+  visibility = "organization"
+ 
+#Used by Owners and users with "Manage Teams" permissions to control whether team members can manage team tokens. 
   #Defaults to true. Set to false to test if we can creat team token.
   allow_member_token_management = false 
 
+   organization_access {
   #set this to true, to test what will show in the HCP Terraform UI
-  manage_teams = true
-  visibility = "organization"
+     manage_teams = true
+  }
 }
