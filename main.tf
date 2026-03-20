@@ -13,17 +13,19 @@ provider "tfe" {
 
 variable "organization_name" {
   description = "Name of your HCP Terraform organization"
+  default     ="Ting_HCP_Demo"
   type        = string
 }
 
 variable "team_name" {
   description = "Name of the team to create"
+  default     = "test-team"
   type        = string
 }
 
 resource "tfe_team" "example" {
   name         = var.team_name
-  organization = "Ting_HCP_Demo"
+  organization = var.organization_name
   visibility = "organization"
  
 #Used by Owners and users with "Manage Teams" permissions to control whether team members can manage team tokens. 
